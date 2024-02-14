@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;     
+      /*background-image: url('image/bluedonkey.png');*/
+      background-color: #0366ff
+    }
+
+    nav {
+      display:inline;    
+      text-align: center;        
+      padding: 15px;
+      margin-left: 25%;
+      position: fixed;
+      width: 100%;
+      z-index: 1000;      
+    }
+
+    ul {      
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: transparent;
+    }
+
+    li {
+      float: left;
+    }
+
+    a {
+      display: block;
+      color: azure;
+      text-align: center;
+      padding: 14px 16px;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    a:hover {
+      background-color: rgba(255, 255, 255, 0.2); /* Change the alpha value for transparency */
+    }
+    
+    /* Center the content */
+    .content-container {
+      /*background-color: transparent;*/
+      background-color: #0366ff;
+      color:azure;
+      max-width: 800px;
+      margin: 0px auto; /* Adjust the margin for vertical centering */
+      padding: 0px;      
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .content-container1 {
+      /*background-color: transparent;*/
+      background-color: #0366ff;
+      color:rgb(27, 26, 26);
+      max-width: 800px;
+      margin: 0px auto; /* Adjust the margin for vertical centering */
+      padding: 0px;      
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      font-size: 18px;
+    }
+  </style>
+</head>
+<body>
+  <img src="./SVGPLC/images/bluedonkey.png" style="position:relative; left:25%; width:100px">
+  <nav>
+    <ul>      
+      <li><a href="#">Download</a></li>
+      <li><a href="#">Documentation</a></li>
+      <li><a href="./SVGPLC/document/MyFirstApp.html">My_First_App</a></li>
+      <li><a href="#">Sample_App</a></li>
+      <li><a href="#">Advance_Functions</a></li>
+      <li><a href="#">Simulation</a></li>
+      <li><a href="#">Wiki</a></li>
+    </ul>
+  </nav>
+
+  <!-- Centered Content -->  
+  <div class="content-container">
+    <h1>EASY AND FREE PLC EDITOR</h1>
+    <p>Create your PLC program just in few steps.</p>
+    <p>(1) Download program and upload into Arduino chips</p>
+    <p>(2) Get the sample control program and modify it to the functions you need</p>
+    <p>(3) Upload it to Arduino board and done</p>
+  </div>
+  <img src="./SVGPLC/images/setup5.png" style="position:relative; left:55%; width:500px">
+  <div class="content-container1">
+    <h1>ADVANCE DESIGN MORE FEATURES</h1>
+    <p>(1) Use Arduino chip that supports wifi and Bluetooth</p>
+    <p>(2)Support remote update and network connection</p>
+    <p>(3) Web applications provide powerful human-computer interface</p>
+    <p>(4) Cannot work online or offline</p>
+    <p>(5) High-precision online real-time clock</p>
+  </div>
+</body>
+</html>
