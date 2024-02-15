@@ -14,8 +14,7 @@ body {
 .tree-nav {
   font-family: 'Quicksand', sans-serif;    
    width: 300px;
-   height: 100%; /* for zombies browsers*/ 
-   height: 102vh; 
+   height: 100%; /* for zombies browsers*/     
    font-size: 14px;   
    background: var(--background);
    overflow: scroll;
@@ -99,8 +98,10 @@ div.content {
 }
 
 .header{  
+  padding-top:10px;
+  padding-left:20px;
   top:0;
-  height:50px;
+  height:40px;
   width:100%;
   color:#948e8e;   
   background: #0a0a0a; 
