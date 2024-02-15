@@ -1,0 +1,123 @@
+ /*!  Plugin: treeNav (Tree View from HTML Nested List)
+ *   Author: Asif Mughal
+ *   URL: www.codehim.com
+ *   License: MIT License
+ *   Copyright (c) 2019 - Asif Mughal
+ */
+/* File: tree-nav.css */
+ 
+body {
+  background-color: rgb(89, 95, 97);
+  color: rgb(235, 242, 245);  
+  }
+*{ margin: 0; padding: 0;} 
+.tree-nav {
+  font-family: 'Quicksand', sans-serif;    
+   width: 300px;
+   height: 100%; /* for zombies browsers*/ 
+   height: 102vh; 
+   font-size: 14px;   
+   background: var(--background);
+   overflow: scroll;
+   position: fixed;
+}
+
+/* Color Scheme */
+.tree-nav.default{
+  --color: rgba(255, 255, 255, 0.75);
+  --background: rgb(36, 32, 32);
+  --folder-color: rgb(230, 195, 0);
+}
+
+.tree-nav a {
+   color: var(--color);
+   text-decoration: none;
+}
+/* Custom Scrollbar For TreeNav */
+.tree-nav::-webkit-scrollbar {
+  width: 8px;
+}
+
+.tree-nav::-webkit-scrollbar-track {
+  /*background: #f1f1f1; */
+  background: var(--background);
+}
+ 
+.tree-nav::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+.tree-nav::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+.tree-nav ul li{
+  list-style: none;   
+  position: relative;
+  padding: 3px;
+  margin-left: 6px;
+}
+.tree-nav li ul li a:before{
+   content: "—";
+   margin-left: -5px;
+}
+.tree-nav li ul li {
+border-left: 1px dotted var(--color);
+margin-left: 32px;
+
+}
+.tree-nav li ul{
+display: none;
+}
+
+/* Folder Icon Design */
+.folder{
+  cursor: pointer;
+
+}
+.folder:before{
+   /*font-family: FontAwesome;*/
+   content: "\f07b";
+   color: var(--folder-color);
+   margin-right: 5px;
+   display: inline-block;
+   padding: 3px;
+}
+.folder.open:before{
+   content: "\f07c";
+}
+
+div.content { 
+  /*font-family: "Times New Roman", Times, serif;*/
+  /*font-family: FontAwesome;*/
+  font-family: Courier;
+  /*font-family: "Lucida Console", "Courier New", monospace;*/
+  margin-left: 300px;
+  margin-top: 50px;
+  padding: 20px 50px;  
+  width: 800px;
+  line-height : 30px;
+}
+
+.header{  
+  top:0;
+  height:50px;
+  width:100%;
+  color:#948e8e;   
+  background: #0a0a0a; 
+  position: fixed;
+} 
+.headtext
+{ font-size: 28px;
+  margin-top:-35px;
+  margin-left: 80px;
+}
+.reverse
+{
+  color:#0a0a0a;
+}
+
+a.anchor1 { 
+  position: relative;
+  top: -60px;
+  visibility: hidden;
+}
