@@ -110,7 +110,8 @@ div.content {
 .headtext
 { font-size: 28px;
   margin-top:-35px;
-  margin-left: 80px;
+  margin-left: 20px;
+  color:#948e8e; 
 }
 .reverse
 {
