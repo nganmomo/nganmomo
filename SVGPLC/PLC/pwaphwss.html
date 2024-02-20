@@ -1,0 +1,458 @@
+<html>
+<head><link href='https://ipcworld.w3spaces.com/SVGPLC/images/favicon.ico' type='image/x-icon' rel='shortcut icon'/>
+<!--link rel="stylesheet" href="./styles.css"-->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MQTT WSS</title>
+</head>
+<script src="https://unpkg.com/mqtt@5.3.4/dist/mqtt.min.js"></script>   
+<script>
+/////////////////For MQTT////LOWER//////////https://www.hivemq.com/blog/mqtt-security-fundamentals-authentication-username-password/  
+    const clientId = 'nganPLCRelay';
+    const userId = 'nganmomo';
+    const userPw = '5585Ngan';
+    const potoCol = 'wss';
+    // Create a client instance
+    /*
+    const broker = 'wss://f27d2ae246004779b11b64b42778b4a1.s2.eu.hivemq.cloud:8884/mqtt';
+    const client = mqtt.connect(broker, {
+        username: userId,
+        password: userPw,
+        clientId: clientId,
+        protocol: potoCol,
+    });
+    */
+    
+    const broker = 'wss://broker.hivemq.com:8884/mqtt';
+    const client = mqtt.connect(broker, {
+        clientId: clientId,
+        protocol: potoCol,      
+    });   
+   
+var Ttopic="";
+var Rtopic="";   
+//var topic = '123456789saklfjwijf'; 
+var topic = localStorage.getItem('phoneMqttSecret');  
+if(topic===null)
+  disptext=document.getElementById("disp").value="Mqtt unique code not found";  
+else
+  {Ttopic='T'+topic;    //T for phone
+  Rtopic='R'+topic;
+  }
+var rxmessage="";
+var txmessage="";
+var RXstatus=0;
+var initcount=0;
+var limitone=0;
+var Isconnected=0;
+  
+client.on('connect', () => {
+        console.log('Connected to HiveMQ WebSocket');        
+        // Subscribe to a topic
+        client.subscribe(Rtopic, { qos: 0 }, (err) => {
+            if (!err) {
+                console.log('Subscribed to nganPLCRelay');
+            }
+        });
+        // Publish a message         
+    });   
+
+  // Callback function for successful connection
+  // Callback function for connection loss
+  client.on('error', (err) => {
+        console.error('Error:', err);
+      });
+      //mm//          
+  client.on('message', (Rtopic, message) => {
+  console.log(`Received message on topic ${Rtopic}: ${message.toString()}`);
+  rxmessage=message.toString()     
+  RXstatus=1;     
+  if(initcount<10)
+    {if(rxmessage[0]==='i' && rxmessage[1]==='n' && rxmessage[2]==='i' && rxmessage[3]==='R')
+      {let crn=rxmessage[4]+rxmessage[5]+rxmessage[6]+rxmessage[7];
+      if(parseInt(crn)===rn)  
+        {Isconnected=1;
+        updatekeytext();
+        document.getElementById('rmt96').style.visibility="hidden"; 
+        rn=0; //avoid duplicate
+        }
+      initcount++;                                                
+      }
+    if(rxmessage[0]==='d' && rxmessage[1]==='i' && rxmessage[2]==='s' && rxmessage[3]==='d')
+      FBhandledisplay(rxmessage);   
+    if(rxmessage[0]==='j' && rxmessage[1]==='o' && rxmessage[2]==='b' && rxmessage[3]==='d')
+      {toggleCheckbox(100); 
+      }        
+    }  
+  //if(limitone===0 && initcount>0)
+  //  {limitone=1;
+  //  handleInitKey(rxmessage);              
+  //  }
+  //if(initcount>2)
+  //  {disptext=document.getElementById("disp").value="Mqtt code Occupied";               
+  //  initcount=10;
+  //  disptext=document.getElementById("hints").innerText="Pls user other Mqtt code";   
+  //  }          
+  });
+  
+  // Function to publish a message
+  function publishMessage() {    
+      initcount=0;     
+      client.publish(Ttopic, txmessage, { qos: 1 });
+  }   
+
+/////////////////For MQTT//UPPER////////////  
+let mxsetdev=5;
+let mysetdev=6;  
+var rowtext = Array.from(Array(6), () => new Array(8)); 
+
+var butcolor = ["#101010","#2f4468","#0c570c","808480","#576935"];
+var ratio=Array(8).fill("0"); 
+var kvalue=Array(24).fill(" "); 
+var keyv="";
+var keyvout="";
+var PreviousKey=0;
+
+var rn;
+function loadkeytable2(){    
+  for(let t=0;t<mysetdev;t++)   
+    { let v=t+1;
+      rowtext[0][t] = "<td><button class='button but1' id='rmt"+v+"1' onclick='toggleCheckbox("+v+"1);'>"+v+"</button></td>"
+      rowtext[1][t] = "<td><button class='button but2' id='rmt"+v+"2' onclick='toggleCheckbox("+v+"2);'>"+v+"</button></td>"
+      rowtext[2][t] = "<td><button class='button but3' id='rmt"+v+"3' onclick='toggleCheckbox("+v+"3);'>"+v+"</button></td>"
+      rowtext[3][t] = "<td><button class='button but4' id='rmt"+v+"4' onclick='toggleCheckbox("+v+"4);'>"+v+"</button></td>"
+      rowtext[4][t] = "<td><button class='button but5' id='rmt"+v+"5' onclick='toggleCheckbox("+v+"5);'>"+v+"</button></td>"
+      rowtext[5][t] = "<td><button class='button but6' id='rmt"+v+"6' onclick='toggleCheckbox("+v+"6);'>"+v+"</button></td>"
+    }     
+  for(let j=0;j<mysetdev;j++)  
+    {row = document.getElementById('myDRow'+j.toString());         
+    for(let k=0;k<mxsetdev;k++)
+      {x0 = row.insertCell(k);        
+      x0.innerHTML = rowtext[k][j];  //        
+      }      
+    }           
+}
+
+
+function inputclick()           //display click
+{if(butcolor[keytype]!=null && PreviousKey>0)
+    document.getElementById('rmt'+PreviousKey).style.backgroundColor=butcolor[keytype];//"#2f4468"; 
+  document.getElementById('disp').value=""; 
+}
+
+var  txed="";
+var  norepeat=0;
+var  keyno=0;
+var  keytype=0;
+var  disptext;
+
+function requestpassword()
+{document.getElementById("disp").value="Try again";  
+updatepassword();
+}
+
+
+function updatepassword()
+{
+//txmessage='INITK'; // phone initial
+//publishMessage();
+RXstatus=0;
+let k=0;  
+disptext=document.getElementById("disp").value;  
+if(disptext.length==32)  
+  {localStorage.setItem('phoneMqttSecret',disptext);    
+  topic = localStorage.getItem('phoneMqttSecret');     
+  Ttopic='T'+topic;    //T for phone
+  Rtopic='R'+topic;  
+  document.getElementById("disp").value="Refresh page";  
+  //startload();
+  //setTimeout(requestpassword,50000); 
+  }
+else
+  {document.getElementById("disp").value="Input 32 char";   
+  }     
+}
+//display 
+function getdispay()
+{if(norepeat===1)
+  {txmessage="DISPL";  
+  publishMessage();    
+  toggleCheck(0); //show display
+  norepeat=0;
+  if(PreviousKey!=0)
+    document.getElementById('rmt'+PreviousKey).style.backgroundColor=butcolor[keytype];//"#2f4468";   
+  }  
+}
+
+function FBhandledisplay(responseText)
+{var j;
+var t=0;
+var avalue=0;
+keyvout=keyv;
+keyv="";     //response to display o 4-18 position
+let disptext="";
+if(responseText[3]==='d')  
+  {for(let t=4;t<21;t++)
+    {if(responseText[t]===undefined)
+      break;
+    if(responseText[t]==="u0000")
+      continue;   
+    disptext=disptext+responseText[t];
+    }            
+  if(responseText[4]==='A' && responseText[5]===':' && responseText[6]==='=') 
+    {avalue=responseText[7]+responseText[8]+responseText[9];
+    document.getElementById('disp').value='A:='+(avalue*ratio[keyno]/255).toFixed(2)+'/D:='+responseText[14]+
+    '('+responseText[16]+'/'+responseText[18]+')';
+    }
+  else
+    { if(disptext==='READY' && KEYINITDONE===1)
+        {document.getElementById('rmt96').style.backgroundColor="#3A3736";//2f4468";//butcolor[keyno];
+        document.getElementById('disp').value="READY";  
+        }
+      else if(disptext==='ID not match' || KEYINITDONE===0)
+        {document.getElementById('rmt96').style.backgroundColor="#111111";//2f4468";//butcolor[keyno];   
+        document.getElementById('disp').value="ID not match";  
+        }
+      else
+        {document.getElementById('disp').value=disptext;    
+        if(disptext[0]==='O' && disptext[1]==='N')
+          document.getElementById('rmt'+PreviousKey).style='border:1px solid #c51919;width:'+WW+'px;height:'+HH+'px';  
+        else
+          document.getElementById('rmt'+PreviousKey).style='border:0px solid #c51919;width:'+WW+'px;height:'+HH+'px';
+        }
+      }
+    }              
+else
+  document.getElementById('disp').value="";  
+if(responseText[3]==='t') 
+  toggleCheckbox(100);  //request display
+if(responseText[4]==='P' && responseText[5]==="L" && responseText[6]==="S")  //require update password  
+  document.getElementById('rmt96').style.backgroundColor="#111111";      
+//////////////Request display continue/////////// 
+}
+
+/////////////////////////////////
+function toggleCheckbox(x)
+{if(x<98)
+  {//if(PreviousKey!=0)
+  //  document.getElementById('rmt'+PreviousKey).style.backgroundColor=butcolor[keytype];//"#2f4468"; 
+  keyno=parseInt(x/10)-1;
+  if(x===96)   //update password
+  document.getElementById('rmt'+x).style.backgroundColor="#111111";//butcolor[keyno];
+  else
+  {document.getElementById('rmt'+x).style.backgroundColor="#576957";//butcolor[keyno];
+  PreviousKey=x;  
+  keytype=x%10;  
+  }
+  toggleCheck(x); //tx key to PLC
+  norepeat=1;     //get display once 
+  }
+else
+  {const myTimeout = setTimeout(getdispay,500);      
+  }
+}
+
+function toggleCheck(x) {  
+  if(x!=96) //show value except verify password
+    {disptext=document.getElementById('disp').value;
+      if(disptext!="0")// && disptext[0]!='*')  //convert accordingly
+      {if(parseInt(disptext)>parseInt(ratio[~~(x/10)]))
+        {document.getElementById('disp').value="over maximum";          
+        disptext="255";
+        }
+      else
+        disptext=~~(parseInt(disptext)*255/parseInt(ratio[~~(x/10)]));             
+      }
+    }    
+  if(x===96)// && disptext.length!=8)  
+    disptext=localStorage.getItem('phoneSecret');      
+  txmessage="KEYIN"+x+disptext;   //for no display 
+  //else
+  //  txmessage="DISPL";    //for display
+  publishMessage();    
+  }  
+
+///////////////////keyboard init///////////////////////////////////
+var WW;
+var HH;
+var KEYINITDONE=0;
+
+function handleInitKey(responseText){
+  var keyv="";
+  var k=1;
+  var t=10;
+  let RatioC=1;
+  const  tx=['130','220','110','75','55','45'];
+  const  ty=['123','130','120','70','50','40','35','30','30'];
+  if(responseText[3]=='R' && Isconnected===1 )
+  {for(j=60;j<350;j++)
+    {if(responseText[j]==='*' && responseText[j+1]==='$' && responseText[j+2]==='^')  
+      {
+        mxsetdev=responseText[j+3];
+        mysetdev=responseText[j+4];     
+        WW=tx[mxsetdev];
+        HH=ty[mysetdev];
+        if((WW+HH)>=4)  KEYINITDONE=1;
+        keyv="";
+        loadkeytable2();
+        for(let y=1;y<=mysetdev;y++)
+          {for(let x=1;x<=mxsetdev;x++) 
+            {t=y*10+x;
+            document.getElementById('rmt'+t).style.width=tx[mxsetdev]+'px';     
+            document.getElementById('rmt'+t).style.height=ty[mysetdev]+'px';                       
+            if(mysetdev<4 || mysetdev<4)  
+              document.getElementById('rmt'+t).style.margin="11px 13px"; 
+            }
+          }            
+        document.getElementById('rmt96').style.backgroundColor="#111111"; 
+        break;              
+      }
+    else    
+      keyv=keyv+responseText[j];      
+    }  
+  for(j=4;j<350;j++)   
+    {if(responseText[j]==='@') // && responseText[j+2]=='%')             
+      {if(k<=mxsetdev && t<=(mysetdev*10))                                 
+        document.getElementById('rmt'+(k+t)).innerText=keyv;            //yx                              
+      if(k===6)                        
+        ratio[RatioC++]=keyv;                    //store a value 
+      ////////////
+      keyv=""; 
+      if(k++>=6)
+        {k=1;
+        t=t+10;
+        }
+      if(t>80)                       
+        break;                      
+      }
+    else
+      keyv=keyv+responseText[j];                                                                                                                                                                                                
+    }  
+//if(responseText[3]=='o')
+//  {
+//  document.getElementById('disp').value=responseText[4]+responseText[5]; 
+//  }  
+  document.getElementById("disp").value="Ready";                      //*//"Pls Verify ID";   
+  //document.getElementById('rmt96').style.visibility="hidden";         //*//backgroundColor="yellow";  
+  }
+//else
+//  {document.getElementById("disp").value="Pls Verify ID";                      //*//"Pls Verify ID";   
+//  document.getElementById('rmt96').style.backgroundColor="yellow";    
+//  }
+}
+///////////////////FOR XHTTP COMMUNICATION////////////////
+
+function updatekeytext() {
+//if(protocal===1)  //mqtt
+  {RXstatus=0;
+  txmessage='phonesetup'
+  publishMessage();
+  for(let k=0;k<1000;k++)
+    {if(RXstatus===1)
+      {delay(10);
+      break;
+      }
+    }
+  handleInitKey(rxmessage);  
+  }
+}
+
+//////////////////////////////////////////
+window.onload = async function(){ 
+  //URL=window.location.host;
+  //URL="192.168.1.84:8088";
+  //updatekeytext();    
+  startload();
+  //setTimeout(requestpassword,10000);    
+  //document.getElementById('rmt96').style.backgroundColor="#111111";//dark butcolor[keyno];  
+  }
+function startload()
+{rn=Math.floor(Math.random() * 9999);
+if(rn<1000) rn=rn+1000;   
+txmessage='INITK'+rn; // phone initial
+publishMessage();  
+}
+//////////////////////////////////////////
+</script>
+<body>
+  <h1>Donkey Labs</h1>
+  <label id="init" style="color:rgb(136, 129, 129)">Input password</label>
+  <br>
+  <tr>
+  <input  type='text' id='disp' onclick='inputclick()' class='disp' minlength='4' maxlength='32' size='14'></input>
+  <table class='devtable'><tbody>
+  <tr id='myDRow0'></tr><tr id='myDRow1'></tr><tr id='myDRow2'></tr><tr id='myDRow3'></tr>
+  <tr id='myDRow4'></tr><tr id='myDRow5'></tr><tr id='myDRow6'></tr><tr id='myDRow7'></tr>
+  </tbody>
+  </table>
+  <br>
+  <button class='button but9' id='rmt96' onclick='updatepassword()'>Verify ID</button>
+  <h3 id="hints" ></h3>
+  <!--button class='button but9' id='rmt96' onclick='location.reload();'>Refresh</button-->
+  </body>
+  <style> 
+    body { font-family: Arial; text-align: center; margin:0px auto; padding-top: 30px; background-color: rgb(58, 56, 55);}
+    table { margin-left: auto; margin-right: auto; }
+    td { padding: 8 px; }
+    .button {    
+      border: none;
+      color:  rgb(214, 207, 202);
+      padding: 5px 5px;
+      text-align: justfy;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 14px;
+      margin: 2px 3px;
+      width:53px;
+      height:30px;
+      cursor: pointer;   
+      /*border:1px solid #c51919;*/
+      border-radius: 12%;
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+    .but {
+      background-color: rgb(196, 189, 184);
+      color:rgba(7, 7, 6, 0.788);     
+    }
+    .but1 {
+      background-color: #2f4468;    
+    }
+    .but2 {
+      background-color: rgb(12, 87, 12);   
+    }
+    .but3 {
+      background-color: rgb(128,134,128);  
+    }
+    .but4 {
+      background-color: rgb(87,105,53);   
+    }
+    .but5 {
+      background-color: rgb(121,37,37);  
+    } 
+    .but6 {
+      background-color: rgb(138, 190, 41);   
+    }
+    .but7 {
+      background-color: rgb(87, 59, 212);  
+    } 
+    .but8 {
+      background-color: rgb(206, 111, 111);  
+    } 
+    .but9 {
+      background-color: rgb(17, 17, 17); 
+      color:rgb(58, 56, 55);
+      width:100px; 
+    }    
+    .disp{text-align: center;
+      font-size: 25px;
+      background-color: chocolate;
+      border-color:black;
+      border-width: 2px;
+      margin-bottom: 15px;
+      border-radius: 10%;
+      }
+    .init{
+      color:rgb(158, 172, 171)
+    }  
+  </style>
+</html>

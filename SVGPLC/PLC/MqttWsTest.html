@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HiveMQ WebSocket Client</title>
+</head>
+<body>
+
+<script src="https://unpkg.com/mqtt@5.3.3/dist/mqtt.min.js"></script>        
+<script>
+    // Define the HiveMQ WebSocket URL
+    
+    //const broker = 'wss://broker.hivemq.com:8884/mqtt';
+    // Define the client ID
+    const clientId = 'nganPLCRelay';
+    const userId = 'nganmomo';
+    const userPw = '5585Ngan';
+    const potoCol = 'wss';
+    // Create a client instance
+    
+    const broker = 'wss://f27d2ae246004779b11b64b42778b4a1.s2.eu.hivemq.cloud:8884/mqtt';
+    const client = mqtt.connect(broker, {
+        username: userId,
+        password: userPw,
+        clientId: clientId,
+        protocol: potoCol, // Use WebSocket
+    });
+    /*  
+    const broker = 'wss://broker.hivemq.com:8884/mqtt';
+    const client = mqtt.connect(broker, {
+        //username: userId,
+        //password: userPw,
+        clientId: clientId,
+        protocol: potoCol, // Use WebSocket
+    });
+    */
+    // Set up event handlers
+    client.on('connect', () => {
+        console.log('Connected to HiveMQ WebSocket');
+        
+        // Subscribe to a topic
+        client.subscribe('nganPLCRelay', { qos: 1 }, (err) => {
+            if (!err) {
+                console.log('Subscribed to nganPLCRelay');
+            }
+        });
+
+        // Publish a message
+        client.publish('your/topic', 'Hello, HiveMQ!', { qos: 1 });
+    });
+
+    client.on('message', (topic, message) => {
+        console.log(`Received message on topic ${topic}: ${message.toString()}`);
+    });
+
+    client.on('error', (err) => {
+        console.error('Error:', err);
+    });
+
+    // Disconnect from the broker when the page is closed
+    window.onbeforeunload = () => {
+        client.end();
+    };
+</script>
+</body>
+</html>
