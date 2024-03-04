@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
    <script>
       function includeHTML() {
@@ -51,7 +51,15 @@
       <img src="donkey.gif" width="50" height="40"-->     
       </header>   
       <nav class="tree-nav default">
-         <ul class="main-items">                      
+         <ul class="main-items">  
+            <li data-type="folder">
+               <a href="#QS1">Quick_Start</a>
+               <ul>
+                  <li><a href="#QS1" id="qstart">Product Comparison</a> </li>
+                  <li><a href="#OV2">About design</a> </li>
+                  <li><a href="#OV3">Software architecture</a> </li>                 
+               </ul>
+            </li>                   
             <li data-type="folder">
                <a href="#OV1" id="Overview">Overview</a>
                <ul>
@@ -288,13 +296,7 @@
          </ul>
       </nav>
       <div class="content">
-         <div w3-include-html="HowtoUSe_PLCeditor.html" class="context"></div> 
-         <div w3-include-html="overview.html" class="context"></div>   
-         <div w3-include-html="operationsetup.html" class="context"></div>    
-         <div w3-include-html="examples.html" class="context"></div>
-         <div w3-include-html="LadderCode.html" class="context"></div>
-         <div w3-include-html="Api.html" class="context"></div>                        
-         <div w3-include-html="System_setup.html" class="context"></div>        
+         <div w3-include-html="Quick_start.html" class="context"></div>             
          <script>
          includeHTML();
          </script>                      
