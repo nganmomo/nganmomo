@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -9,51 +9,49 @@
   <title>Features and specfication</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
   <link rel="stylesheet" href="../css/plccss.css">
+  <link rel="stylesheet" href="../css/indexcss.css">
 </head>
 
 <body>
   <div class="container">
-    <header class="header">
-      <h1>About this PLC project</h1>
-      <div class="social">
-        <a href="#"><i class="fab fa-facebook"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-      </div>
+     <header class="header">      
+        <a href="../../index.html">
+         <td id="projectlogo"><img alt="Logo" src="../manual/images/donkey.gif"  width="50" height="40"/></td>         
+         <div class="headtext" style="color:white">FreePLC</div>        
+         </td>           
+      </a>       
+      <h1>About project</h1>     
     </header>
     <aside class="left">
-      <ul>
-        <li><a href="/index.html">Home</a></li>
-        <li><a href="/content.html">Software schematic diagram</a></li>
-        <li><a href="https://ipcworld.w3spaces.com/homeweb.html">Software functions completed</a></li>
-        <li><a href="/support.html">Software functions under developing</a></li>
-        <li><a class="active" href="/features.html">Special features</a></li>  
-        <li><a href="/example.html">Support third party devices</a></li>                
+      <ul>      
+        <li><a href="#AB1">Modular design</a></li> 
+        <li><a href="#AB2">Sofeware structure</a></li>    
+        <li><a href="#AB3">Communication protocol</a></li>                    
       </ul>
       <hr>
       <!--p> Hire me, I'm a little donkey, working for you for a pittance, I am is a All in one donkey.<br>- Mr. Donkey Plc</p-->
     </aside>
+     <a class="anchor" id="AB1"></a>
+    <div class="content"><br><br>
+      <h2>Modular design</h2>
+      <p>The PLC adopts a modular design, and the main module has no input/output and is connected to the I/O board using a USB-C cable.</p>
+      <p>The submodule I/O module is open source and therefore can be configured for any application.</p>
+      <p>A variety of basic I/O modules will be launched soon, including high-voltage isolation, analog isolation input modules, and third-party dedicated device interfaces.</p>             
+      <hr>
+    </div>    
+    <a class="anchor" id="AB2"></a>
     <div class="content">
-      <h2>Sofeware block diagram</h2>
+      <h2>Sofeware structure</h2>
       <img src="../images/SoftwareBox.png">      
       <p>As shown in the picture above, editing PLC programs can be done through an online website or a small server in esp32. The online server will be updated regularly. If the user updates the ESP32 firmware, both sides are basically the same.</p>
       <p>To save costs, We used existing hardware on the market and designed only the necessary parts. Software and firmware downloads and support available. Users can create their own projects and select their parts.</p>
       <hr>
-    </div>       
+    </div>          
     <div class="content">
-      <h2>Software functions under developing</h2>
-      <p>Phone remote control in www internet</p>
-      <p>MODBUS feedback verification</p>
-      <p>c/c++ support function</p>
-      <p>API for customer device</p>
-      <p>HMI</p>         
-      <hr><br>
-    </div>    
-    <div class="content">
-      <h2>Hardware circuit board under developing</h2>
-      <p>Phone remote control in www internet</p>
-      <p>MODBUS feedback verification</p>
-      <p>c/c++ support function</p>         
+      <h2>Communication protocol</h2>
+      <p>RS232 for short distance communication, or RS485 for long distance communication. Mqtt or Ethernet can also be used depending on the situation.</p>
+      <p>Simple open format that can be converted to any standard such as modbus. This PLC is basically designed for small systems.</p>
+      <p>API software templates will be provided</p>         
       <hr><br>
     </div>    
 </body>

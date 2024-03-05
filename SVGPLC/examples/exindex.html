@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+   <script>
+      function includeHTML() {
+        var z, i, elmnt, file, xhttp;
+        /*loop through a collection of all HTML elements:*/
+        z = document.getElementsByTagName("*");
+        for (i = 0; i < z.length; i++) {
+          elmnt = z[i];
+          /*search for elements with a certain attribute:*/
+          file = elmnt.getAttribute("w3-include-html");
+          if (file) {
+            /*make an HTTP request using the attribute value as the file name:*/
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+              if (this.readyState == 4) {
+                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
+                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
+                /*remove the attribute, and call this function once more:*/
+                elmnt.removeAttribute("w3-include-html");
+                includeHTML();
+              }
+            }      
+            xhttp.open("GET", file, true);
+            xhttp.send();
+            /*exit the function:*/
+            return;
+          }
+        }
+      };
+      </script>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <title>jQuery Tree Nav Example  </title>
+      <!--Google Fonts-->
+      <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+      <!--Font Awesome-->
+      <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+      <!--Tree Nav CSS-->
+      <link rel="stylesheet" href="../manual/css/tree-nav.css"/>      
+   </head>
+   <body>     
+      <header class="header">           
+         <a href="../../index.html">
+         <td id="projectlogo"><img alt="Logo" src="../manual/images/donkey.gif"  width="50" height="40"/></td>         
+         <div class="headtext" style="color:white">Applications</div>        
+         </td>   
+         </a>
+      <!--h1 class="headtext">Donkey PLC</h1>         
+      <img src="donkey.gif" width="50" height="40"-->     
+      </header>   
+      <nav class="tree-nav default">
+         <ul class="main-items">                      
+            <li data-type="folder">
+               <a href="#OV1" id="Basic systems">Overview</a>
+               <ul>
+                  <li><a href="#EX1">Wire connection</a> </li>
+                  <li><a href="#EX2">Mqtt connection</a> </li>
+                  <li><a href="#EX3">I/O address map</a> </li>                 
+               </ul>
+            </li>            
+            <li data-type="folder">
+               <a href="#1">Syetem hardware setup</a>
+               <ul>
+                  <li><a href="#EX4">Introduction PLC modules</a> </li>
+                  <li><a href="#EX5">Mainboard plus I/O board</a> </li>  
+                  <li><a href="#EX6">Mainboard link to third part deivce</a> </li>                                  
+               </ul>
+            </li>
+            <li data-type="folder">
+               <a href="#1">Edit program with simulation</a>
+               <ul>
+                  <li><a href="#EX7">Hardware requirement</a> </li>
+                  <li><a href="#EX8">Firmware upload</a> </li>
+                  <li><a href="#EX9">Config PLC</a> </li>                 
+               </ul>
+            </li>        
+             <li data-type="folder">
+               <a href="#1">Input output device</a>
+               <ul>
+                  <li><a href="#EX10">Hardware requirement</a> </li>
+                  <li><a href="#EX11">Firmware upload</a> </li>
+                  <li><a href="#EX12">Config PLC</a> </li>                 
+               </ul>
+            </li>                       
+         </ul>
+      </nav>
+      <div class="content">  
+         <div w3-include-html="application.html" class="context"></div>       
+         <div w3-include-html="inputoutput.html" class="context"></div>
+         <script>
+         includeHTML();
+         </script>                      
+      </div>    
+    <!--jQuery-->                 
+    <script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
+      <!--Tree Nav Js-->
+      <script src="js/jquery.treenav.js"></script>
+      <script>
+         $(document).ready(function(){
+         $(".tree-nav").treeNav();
+         });
+      </script>
+   </body>
+</html>
