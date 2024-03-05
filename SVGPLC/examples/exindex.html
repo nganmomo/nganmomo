@@ -38,7 +38,8 @@
       <!--Font Awesome-->
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
       <!--Tree Nav CSS-->
-      <link rel="stylesheet" href="../manual/css/tree-nav.css"/>      
+      <link rel="stylesheet" href="../manual/css/tree-nav.css"/>  
+      <link rel="stylesheet" href="../css/indexcss.css"/>    
    </head>
    <body>     
       <header class="header">           
@@ -53,19 +54,18 @@
       <nav class="tree-nav default">
          <ul class="main-items">                      
             <li data-type="folder">
-               <a href="#OV1" id="Basic systems">Overview</a>
+               <a href="#EX1" id="Basic systems">Overview</a>
                <ul>
-                  <li><a href="#EX1">Wire connection</a> </li>
-                  <li><a href="#EX2">Mqtt connection</a> </li>
-                  <li><a href="#EX3">I/O address map</a> </li>                 
+                  <li><a href="#EX1">Application overview</a></li>
+                  <li><a href="#EX2">System hard configuration</a></li>                                         
                </ul>
             </li>            
             <li data-type="folder">
-               <a href="#1">Syetem hardware setup</a>
-               <ul>
-                  <li><a href="#EX4">Introduction PLC modules</a> </li>
-                  <li><a href="#EX5">Mainboard plus I/O board</a> </li>  
-                  <li><a href="#EX6">Mainboard link to third part deivce</a> </li>                                  
+               <a href="#EX4">Syetem hardware setup</a>
+               <ul>  
+                  <li><a href="#EX4">PLC's Modules</a></li>                   
+                  <li><a href="#EX5">I/O address map</a></li>  
+                  <li><a href="#EX6">Mainboard link to third part deivce</a></li>                                  
                </ul>
             </li>
             <li data-type="folder">
@@ -77,7 +77,7 @@
                </ul>
             </li>        
              <li data-type="folder">
-               <a href="#1">Input output device</a>
+               <a href="#EX10">Input output device</a>
                <ul>
                   <li><a href="#EX10">Hardware requirement</a> </li>
                   <li><a href="#EX11">Firmware upload</a> </li>
@@ -99,7 +99,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
       <!--Tree Nav Js-->
-      <script src="js/jquery.treenav.js"></script>
+      <script src="../manual/js/jquery.treenav.js"></script>
       <script>
          $(document).ready(function(){
          $(".tree-nav").treeNav();
