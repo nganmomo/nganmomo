@@ -2,7 +2,7 @@
 <html lang="en">
 <body>  
     <div>
-    <a class="anchor" id="EX1"></a><br><br>    
+    <a class="anchor" id="EX11"></a><br><br>    
       <h2>Application overview</h2>
       <p>Consider this a simplest programmable logic control with powerful functionality since the MCU has system and wifi on chip.</p>     
       <p>The chip provides a very good Web application environment and intuitive human-machine interface. Compared with equipment with the same function, the cost of PLC is greatly reduced.</p>
@@ -11,7 +11,7 @@
       <hr><br>
     </div>  
     <div>   
-    <a class="anchor" id="EX2"></a><br><br>           
+    <a class="anchor" id="EX12"></a><br><br>           
       <h2>System hardware configuration</h2>
       <p>The mainboard is mainly composed of two MCUs, one for the main program and the other for the local Mqtt broker. If Local Mqtt is not required, the second MCU will be unloaded.</p>     
       <p>To increase feasibility, the input and output devices are mounted on another module, so the user can configure any combination as required.</p>
@@ -20,7 +20,7 @@
       <hr><br>
     </div>   
     <div>   
-    <a class="anchor" id="EX4"></a><br><br>                  
+    <a class="anchor" id="EX13"></a><br><br>                  
     <h2>PLC modules list</h2>
     <table>
         <thead>
@@ -95,7 +95,65 @@
             <!-- Add more rows for additional features -->
         </tbody>
     </table>
-    </div>    
+    </div>  
+    <a class="anchor" id="EX14"></a><br><br>  
+    <h2>Function in main screen</h2>
+    <p>After setup wifi SSID and PW, Open URL program will get the screen as bellow</p>
+    <img src="../images/mainscreen.png" style="position:relative;width:900px">  
+     <a class="anchor" id="EX21"></a><br><br>      
+     <h2>DIP switch function</h2>
+     <table>
+        <thead>
+            <tr class="reverse">
+                <th>Key Name</th>
+                <th>Description</th>             
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>WIFI Disable</td>
+                <td>For input SSID and PASSWORD</td>            
+            </tr>
+            <tr>
+                <td>Mqtt Disable</td>
+                <td>get wifi or mqtt connect status</td>             
+            </tr>
+            <tr>
+                <td>Display Enable</td>
+                <td>Return to the page for edit ladder program</td>            
+            </tr>
+            <tr>
+              <td>LAN phone Enable</td>
+              <td>clear the edit screen</td>        
+            </tr>
+            <tr>
+              <td>MQTT phone Enable</td>
+              <td>Get the program status</td>            
+          </tr>
+          <tr>
+              <td>Remote update Enable</td> 
+              <td>Download the ladder program PLC hardware</td>                       
+          </tr>
+          <tr>
+            <td>EDIT required password</td>
+            <td>Upload program to PLC hareware</td>         
+          </tr>        
+            <!-- Add more rows for additional features -->
+        </tbody>
+    </table>
+    <a class="anchor" id="EX15"></a><br><br>  
+    <h2>Function in Pick icon screen</h2>        
+    <table>       
+        <tbody>
+          <tr>
+            <td style="border:0px"><img src="../images/Pickupmen.png" style="position:relative;width:200px"></td>
+            <td style="border:0px"><p>(1) Use the mouse left click to select, and the icon cannot be dragged to the editing area. Move the mouse to the editing area and left-click.</P> 
+            <p>(2) Right-click the selected icon, and a help menu will pop up on the right. The help menu must be closed to return to the editing window.</P>
+            <p>(3) You can select Blank Icons to delete unwanted icons.</P>    
+            <br><br><br<br><br><br><br><br<br><br><br><br><br<br><br><br<br><br>      
+            </td>
+          </tr>                   
+        </tbody>
+    </table>    
 </body>
-
 </html>
