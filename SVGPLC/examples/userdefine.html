@@ -1,0 +1,71 @@
+ <html> 
+ <body>
+  <br><br>     
+    <a class="anchor" id="EX41"></a><br><br>  
+    <h2>User define C add-on</h2>
+    <p>The user-defined add-on has a pair of icons, Return and Call, and a C template has been provided so that users can write their own code to link Call and Return.</p>
+    <p>The trigger switch signal comes from the ladder diagram program, c calls start to execute a program, and the result can be fed back to the return icon. That is, when the ladder triggers the sensor device, the result is returned and allows the ladder program to perform the next step.</p>
+    <table>
+        <thead>
+            <tr class="reverse">
+                <th>Icon</th>
+                <th>Function description</th>
+                <th>Source</th>
+                <th>Sink</th>
+            </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td><img src="../images/normalopen.png" style="width:100px"></td>
+              <td>Normal open</td>            
+              <td>Channel /Group</td>
+              <td>Channel /Group</td>
+          </tr>
+          <tr>
+              <td><img src="../images/normalclose.png" style="width:100px"></td></td>
+              <td>Normal open</td>
+              <td>Channel /Group</td>
+              <td>Channel /Group</td>
+          </tr>
+          <tr>
+              <td><img src="../images/NormalOpenUp.png" style="width:100px"></td></td>
+              <td>Normal open rising edge</td>
+              <td>Channel /Group</td>
+              <td>Channel /Group</td>
+          </tr>                       
+          <tr>
+              <td><img src="../images/NormalOpenDown.png" style="width:100px"></td></td>
+              <td>Normal open falling edge</td>
+              <td>Channel /Group</td>
+              <td>Channel /Group</td>
+          </tr>
+          <tr>
+            <td>4 channel Analog input</td>
+            <td>RS232 linkup Analog input</td>
+            <td>Donkey lab.</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>2in 2 out channel Analog</td>
+            <td>RS232 linkup Analog in/out board, fully isolated</td>
+            <td>Donkey lab.</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>8 channel spliter board</td>
+            <td>RS232 8 channel, spliter</td>
+            <td>Donkey lab.</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>User prototype board</td>
+            <td>Power inlet and USB c linkup to mainboard</td>
+            <td>Donkey lab.</td>
+            <td>0</td>
+          </tr>          
+            <!-- Add more rows for additional features -->
+        </tbody>
+    </table>
+</body>
+
+</html>
