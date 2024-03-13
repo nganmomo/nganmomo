@@ -108,7 +108,9 @@ body {
     height: 400px;   
     margin-left: 5px;   
     overflow-y: auto;
-    overflow-x: hidden;               
+    overflow-x: hidden;  
+    scrollbar-color: rgb(59, 58, 58) rgb(26, 26, 25);   
+    scrollbar-width: 5px;            
     margin-top: -2px;  
     border-radius: 3px;
     color:azure;
@@ -279,7 +281,7 @@ left: 500px;*/
 .comst
 {margin-left:5px;
   width:140px;
-  height:12px;
+  height:16px;
 }
 
 input
@@ -428,6 +430,12 @@ color:#ddd;
 }
 
 select{
-height:18px;
+height:16px;
 }
+
+.thst4{
+height:16px;
+}
+
+
 /*)rawliteral";*/

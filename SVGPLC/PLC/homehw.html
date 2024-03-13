@@ -36,6 +36,7 @@
 <script>
 //var tryonline=1;      //Require hardware
 var tryonline=0;    //Not require hardware
+var mqupdate=0;
 </script>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -91,16 +92,15 @@ var tryonline=0;    //Not require hardware
 <script>
 var tryonline=0;  
 var systemtype=0;     //use computer file for debug
-//var systemtype=1;   //use esp32 internal file
-//var URL="192.168.1.84:8088";
-var URL=window.location.host; 
+//var systemtype=1;   //use esp32 internal file 
+var URL ="192.168.1.95:8088";
+//var URL=window.location.host; 
 var Showtable = "";
 var divc1 = document.getElementById('piccont'); 
 var divc2 = document.getElementById('tablecont'); 
 divc1.addEventListener('contextmenu', (e) => {e.preventDefault()});   
 divc2.addEventListener("contextmenu", (e) => {e.preventDefault()});   
 window.onload = async function(){         
-  //CheckHWStatus('MCC'); //comment to bypass login
   Sceret=1;  //uncomment to bypass login
   ////////////////
   updatacell();  
@@ -118,7 +118,6 @@ window.onload = async function(){
   document.getElementById('SHOWSVG').innerHTML=svgdata;
   document.getElementById('HINTS').innerHTML=svghints[0];
   document.getElementById('hintscont').style.height=h-520+'px'; 
-  //CheckHWStatus();
   document.getElementById('textw').innerHTML="Pick one to place";
   showedit(1); //close edit bar
 }  
@@ -134,7 +133,8 @@ function closeModal() {
 }    
 
 function showedit(x)
-{if(x===1 || x===2)
+{mqupdate=1;
+if(x===1 || x===2)
   {if(x===2)
     document.getElementById('closeul').style.visibility='hidden'
     //updatacell();  

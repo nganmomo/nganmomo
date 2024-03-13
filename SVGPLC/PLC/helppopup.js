@@ -220,10 +220,6 @@ if(disptext.length===8)
 }
 
 
-//{if(CheckHWStatus("MCC"+disptext)\
-//{disptext=document.getElementById("disp").value;\
-//}</script>'
-
 var About=
 '<br><h5>Firmware Version: 2.24</h5><br>\
 <h5>Features:</h5>\
