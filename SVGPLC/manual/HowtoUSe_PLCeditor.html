@@ -2,7 +2,7 @@
 <html lang="en">
 <body>  
 <div>
-  <a class="anchor1" id="how1"></a> 
+  <a class="anchor" id="BP11"></a><br><br> 
     <main class="content">
       <h2>Basic theory of Ladder program</h2>
       <p>(1) FreePLC using ladder diagram programming, and the graphically intuitive program is easy to understand and follow.</p>
@@ -11,6 +11,7 @@
       <p>(4) If the output ladder block between the lines is not a green or red line, it is off. </p>
       <p>(5) If the rows of input ladder blocks are the same color as green or red, it means it is in conductive mode. </p>
       <p></p>
+      <a class="anchor" id="BP12"></a><br><br> 
       <h2>Hardware requirement</h2>
       <p>For program editing:</p>  
       <p>(1) PC can run browser</p>  
@@ -18,11 +19,13 @@
       <img src="./images/USBtoUARTBootMode.jpg" style="position:relative; left:15%; width:200px">
       <p>(3) PLC mainboard.</p>       
       <p>(4) For development, it is recommended to use a PLC with input keys and output LEDs, using functions that can be simulated internally without connecting the hardware.</p>      
+      <a class="anchor" id="BP13"></a><br><br> 
       <h2>Software preparation</h2>   
       <h2>The following software required</h2>   
       <p>(1) ESP32 Firmware downloader</p>
       <p>(2) Any serial port monitor program, such as Arduino IDE, Putty etc.</p>
       <p>(3) PLC firmware binary code</p>      
+      <a class="anchor" id="BP14"></a><br><br> 
       <h2>Begin PLC program editing</h2>
       <p>(1) Use pre installed program PLC connect to USB monitor program.</p>
       <p>(2) In PLC mainboard, set setup switch to set position.</p>
@@ -32,36 +35,17 @@
       <p>(6) Use browser to open PLC edit page, use URL "192.168.1.XXX:8088/lan"</p>      
       <p>(7) Start edit program, by using Pick and place editing, when done, Press upload key to upload prgram to PLC mainboard</p>                  
       <p>(8) The program will start running when the start LED turned on.</p>      
-      <img src="./images/Relayboard.JPG" style="position:relative; left:15%; width:500px">
+      <img src="./images/Relayboard.JPG" style="position:relative; left:15%; width:650px">
+      <a class="anchor" id="BP15"></a><br><br> 
       <h2>Online debug</h2>
-      <p>The PLC program prvodes [PROBE] key for monitor the system status</p>
-      <p>When press the [PROBE] key, the edit page electical status will be show on edit page. The green is low voltage, also each ladder bload will show it statusm, like ON OFF etc.</p>
-      
-      
-      <p>These boards shall:</p>
-      <p>(1) Be suitable for mounting, with suitable mounting points for screws.</p>
-      <p>(2) The power inlet adopts C high current.</p>
-      <p>(3) Suitable for installation on ordinary plastic boxes.</p>
-      <p>(4) Original brand components should be used.</p>             
-      <hr><br>
-      <h2>Tools for firmware update</h2>
-      <p>Firmware updates require any USB to serial cable, the start button needs to be pressed to enter boot mode, the PLC also supports some cables that can automatically enter boot mode.</P>
+      <p>The PLC program prvodes [PROBE] key for test the system status</p>     
+      <video style="position:relative; left:15%; width:650px; z-index:-1" autoplay loop muted>
+      <source src="../movie/PLCprobe.mp4"type="video/mp4">  
+      Your browser does not support the video tag.
+      </video>
+      <p>When the [PROBE] key is pressed, the editing page will display the electrical status of the editing page. Green is low voltage, red is high voltage, and each ladder block will display its status, such as ON OFF, etc.</p>     
   </div>  
-  <div>
-    <main class="content">
-      <h2>Setup hardware</h2>
-      <p>Power up the PLC, usb cable connect to computer</p> 
-      <p>Run any uart program, like putty, arduino IDE Power up the PLC, usb cable connect to computer</p>     
-      <p></p>
-      <p></p>             
-      <h2>FAQ</h2>
-      <p>Can I use phone to control PLC anywhere </p>
-      <p>Yes, but must open the firewall in router, or just work at LAN</p>
-      <p>Can I use phone to control via Mqtt broker.</p>
-      <p>Yes, you need to install a third-party MQTT client App, some encryption brokers may not be compatible.</p>
-      <p>Is remote control safe</p>
-      <p>A 32 characters added encryption code to html page.</p>      
-      <hr><br>
+  <div>    
   </div>    
 </body>
 </html>

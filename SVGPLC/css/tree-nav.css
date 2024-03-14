@@ -129,3 +129,7 @@ a.anchor1 {
 img{
   z-index:-1;
 }
+
+video{
+  z-index:-1;
+}
