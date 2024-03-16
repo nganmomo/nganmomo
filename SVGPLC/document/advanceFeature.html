@@ -4,6 +4,7 @@
 <div class="content">
 <a class="anchor" id="AB11"></a><br><br>
   <h2>About this project</h2> 
+  <p>Web applications have many advantages, such as cross-platform, powerful GUI, and remote updates and communications facility.</p>
   <p>The project was designed using the latest technology tools such as libraries Nodejs, System-on-Chip MCU and Web App etc. The hardware can be connected with third party devices and common standards such as MQTT and Modbus. This reduces costs and shortens time to market. On the software side, the web application is cross-platform and requires no installation. Since the memory stored by the MCU is large, it can even support multiple html pages, just like a small server. It creates a web application that can run without a network.</p>
   <br><h2>Developing Programs with Donkey Builder</h2>
   <p>Easy Ladder Logic Generator is a newly designed web application for 2024. It is by far the most advanced, powerful, intuitive, easy-to-use and flexible graphical program development package on the automation market. It is very easy to learn yet provides the ability to complete complex program operations with ease. It improves programmer productivity, program reliability, documentation, and supports the development of reusable program components. PLC software technology takes a generational leap with the introduction of the Easy Ladder logic generator.</p>
@@ -15,11 +16,12 @@
   <hr>       
 <a class="anchor" id="AB12"></a><br><br>   
       <h2>Modular design</h2>
-      <p>The ESP32 S3 MCU stands as a potent testament to the transformative power of modern microcontroller units (MCUs). With its comprehensive array of functions and pivotal system-on-chip architecture, the ESP32 S3 emerges as an exemplary choice, balancing cost-effectiveness with robust performance.</p>
+      <p>We adopt a modular design, and users can configure any combination, such as the number of inputs and outputs, types of input and output attributes, etc.</p>
+      <!--p>The ESP32 S3 MCU stands as a potent testament to the transformative power of modern microcontroller units (MCUs). With its comprehensive array of functions and pivotal system-on-chip architecture, the ESP32 S3 emerges as an exemplary choice, balancing cost-effectiveness with robust performance.</p>
       <p>At its core, the ESP32 S3 harnesses a remarkable blend of capabilities. Its intrinsic wireless communication capabilities coupled with a built-in HTTP server exemplify its versatility and utility. Moreover, the generous allocation of memory further enhances its capacity to handle complex tasks and data-intensive applications.</p>
       <p>In our endeavor, the adoption of the ESP32 S3 MCU has proven instrumental, particularly within our PLC systems. By seamlessly integrating this MCU, we've unlocked a spectrum of functionalities ranging from facilitating human-machine interaction to enabling seamless network communication protocols.</p>
       <p>The ESP32 S3's prowess extends beyond its technical specifications; it embodies a paradigm shift in the realm of embedded systems, empowering developers and engineers to realize innovative solutions at a fraction of traditional costs. Its amalgamation of affordability and performance sets a new standard within the industry, driving progress and innovation in diverse domains.</p>
-      <p>In summary, the ESP32 S3 MCU represents more than just a component; it symbolizes the convergence of cutting-edge technology and practical application, underscoring its pivotal role in shaping the future of embedded systems and IoT devices alike.</p>
+      <p>In summary, the ESP32 S3 MCU represents more than just a component; it symbolizes the convergence of cutting-edge technology and practical application, underscoring its pivotal role in shaping the future of embedded systems and IoT devices alike.</p-->
      <hr>
   
     <a class="anchor" id="AB13"></a><br><br>
@@ -29,7 +31,43 @@
       <p>As shown in the picture above, editing PLC programs can be done through an online website or a small server in esp32. The online server will be updated regularly. If the user updates the ESP32 firmware, both sides are basically the same.</p>
       <p>To save costs, We used existing hardware on the market and designed only the necessary parts. Software and firmware downloads and support available. Users can create their own projects and select their parts.</p>
       <hr>
-         
+      <table>
+        <thead>
+            <tr class="reverse">
+                <th>Code or type</th>
+                <th>Location</th> 
+                <th>Appliction</th>                            
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>WiFi</td>
+                <td>Embedded in ESP32</td>
+                <td>For linking between devices and phone</td>              
+            </tr>
+            <tr>
+                <td>http server</td>
+                <td>Embedded in ESP32</td>
+                <td>Graphical interface for editing and help menu</td>          
+            </tr>
+            <tr>
+                <td>https Server</td>
+                <td>Internet</td>
+                <td>Provide additional function (optional)</td>              
+            </tr>
+            <tr>
+              <td>C++</td>
+              <td>Embedded in ESP32</td>
+              <td>Ladder manipulation</td>         
+            </tr>
+            <tr>
+              <td>APIs</td>
+              <td>System on chip</td>
+              <td>communication protocol support</td>            
+          </tr>                                       
+          <!-- Add more rows for additional features -->
+        </tbody>
+      </table> 
     <a class="anchor" id="AB14"></a><br><br>
 
       <h2>Communication protocol</h2>
@@ -196,7 +234,7 @@
         </tbody>
     </table>
 <a class="anchor" id="BF12"></a><br><br>     
-    <h2>(1) Features comparison</h2>
+    <h2>Features comparison</h2>
     <table>
         <thead>
             <tr class="reverse">
@@ -349,7 +387,7 @@
         </tbody>
     </table>
     <a class="anchor" id="DS11"></a><br><br>
-    <h2>(2) Design components</h2>
+    <h2>Design tools and methode</h2>
 
     <table>
         <thead>
@@ -392,46 +430,7 @@
           </tr>                   
           <!-- Add more rows for additional features -->
         </tbody>
-    </table>    
-    <a class="anchor1" id="OV3"></a><br><br>
-    <h2>(3) Software architecture</h2>
-    <table>
-        <thead>
-            <tr class="reverse">
-                <th>Code or type</th>
-                <th>Location</th> 
-                <th>Appliction</th>                            
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>WiFi</td>
-                <td>Embedded in ESP32</td>
-                <td>For linking between devices and phone</td>              
-            </tr>
-            <tr>
-                <td>http server</td>
-                <td>Embedded in ESP32</td>
-                <td>Graphical interface for editing and help menu</td>          
-            </tr>
-            <tr>
-                <td>https Server</td>
-                <td>Internet</td>
-                <td>Provide additional function (optional)</td>              
-            </tr>
-            <tr>
-              <td>C++</td>
-              <td>Embedded in ESP32</td>
-              <td>Ladder manipulation</td>         
-            </tr>
-            <tr>
-              <td>APIs</td>
-              <td>System on chip</td>
-              <td>communication protocol support</td>            
-          </tr>                                       
-          <!-- Add more rows for additional features -->
-        </tbody>
-    </table> 
+    </table>       
   <h2>Software functions under developing</h2>
   <p>Phone remote control in www internet</p>
   <p>MODBUS feedback verification</p>
