@@ -44,70 +44,45 @@
    <body>     
       <header class="header">           
          <a href="../../index.html">
-         <td id="projectlogo"><img alt="Logo" src="./images/donkey.gif"  width="50" height="40"/></td>         
-         <div class="headtext" style="color:white">FREE PLC</div>                 
-         </td></a>
-         <div class="headtext" style="color:white;margin-left:300px;font-size: 25px;padding-top:10px">User manual</div> 
+         <td id="projectlogo"><img alt="Logo" src="../manual/images/donkey.gif"  width="50" height="40"/></td>         
+         <div class="headtext" style="color:white">FREE PLC</div>        
+         </td>
+         </a>
+         <div class="headtext" style="color:white;margin-left:300px;font-size: 25px;padding-top:10px">Begin with simple application</div> 
       <!--h1 class="headtext">Donkey PLC</h1>         
       <img src="donkey.gif" width="50" height="40"-->     
       </header>   
       <nav class="tree-nav default">
          <ul class="main-items">                      
             <li data-type="folder">
-               <a href="#OV11">Begin FreePLC programming</a>
+               <a href="#SM11">Begin with simple Application</a>
                <ul>
-                  <li><a href="#BP11">Basic theory of Ladder program</a> </li>
-                  <li><a href="#BP12">Hardware requirement</a> </li>
-                  <li><a href="#BP13">Software preparation</a> </li>
-                  <li><a href="#BP14">Launch the application</a> </li>     
-                  <li><a href="#BP15">Begin PLC program editing</a> </li>                  
-                  <li><a href="#BP16">Online debug</a> </li>
-                  <li><a href="#BP17">Details of setup wifi</a> </li>                 
+                  <li><a href="#SM11">Begin with simple Application</a> </li>
+                  <li><a href="#SM12">hardware requirement</a> </li>            
+                  <li><a href="#SM13">About safety</a> </li>                  
                </ul>
             </li>            
             <li data-type="folder">
-               <a href="#1">Initialization</a>
+               <a href="#IN11">Install firmware</a>
                <ul>
-                  <li><a href="#INIT1">WiFi setup</a> </li>
-                  <li><a href="#INIT2">Phone setup</a> </li>  
-                  <li><a href="#INIT3">Clock setup</a> </li>                 
-                  <li><a href="#INIT4">Mqtt setup</a> </li>  
-                  <li><a href="#INIT5">HMI setup</a> </li>     
+                  <li><a href="#IN11">Download firmware</a> </li>
+                  <li><a href="#IN12">Setup wifi</a> </li>
+                  <li><a href="#IN13">Setup phone</a> </li>                   
                </ul>
             </li>
             <li data-type="folder">
-               <a href="#1">How to use PLC editor</a>
+               <a href="#SP11"> Features support</a>
                <ul>
-                  <li><a href="#how1">Hardware requirement</a> </li>
-                  <li><a href="#OV2">Firmware upload</a> </li>
-                  <li><a href="#OV3">Config PLC</a> </li>                 
+                  <li><a href="#SP12">ESP32_RELAY_X4</a> </li>                     
                </ul>
-            </li>           
-            <li data-type="folder">
-               <a href="#1">Overview</a>
-               <ul>
-                  <li><a href="#OV1">Product Comparison</a> </li>
-                  <li><a href="#OV2">About design</a> </li>
-                  <li><a href="#OV3">Software architecture</a> </li>                 
-               </ul>
-            </li>
-
-            <li data-type="folder">
-               <a href="#1">Initialization</a>
-               <ul>
-                  <li><a href="#INIT1">WiFi setup</a> </li>
-                  <li><a href="#INIT2">Phone setup</a> </li>  
-                  <li><a href="#INIT3">Clock setup</a> </li>                 
-                  <li><a href="#INIT4">Mqtt setup</a> </li>  
-                  <li><a href="#INIT5">HMI setup</a> </li>     
-               </ul>
-            </li>
- 
+            </li>                      
       </nav>
-      <div class="content">
-         <div w3-include-html="HowtoUSe_PLCeditor.html" class="context"></div>         
+      <!--div class="content"-->
+         <div w3-include-html="simplebegin.html" class="context"></div>
+         <!--div w3-include-html="HowtoUSe_PLCeditor.html" class="context"></div> 
+         <div w3-include-html="overview.html" class="context"></div>
          <div w3-include-html="Quick_start.html" class="context"></div>   
-         <!--div w3-include-html="operationsetup.html" class="context"></div>    
+         <div w3-include-html="operationsetup.html" class="context"></div>    
          <div w3-include-html="examples.html" class="context"></div>
          <div w3-include-html="LadderCode.html" class="context"></div>
          <div w3-include-html="Api.html" class="context"></div>                        
@@ -115,7 +90,7 @@
          <script>
          includeHTML();
          </script>                      
-      </div>    
+      <!--/div>    
     <!--jQuery-->                 
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"

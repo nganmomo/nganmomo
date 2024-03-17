@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
-   <script>
+<html lang="en"> 
+    <script>
       function includeHTML() {
         var z, i, elmnt, file, xhttp;
         /*loop through a collection of all HTML elements:*/
@@ -28,7 +28,7 @@
           }
         }
       };
-      </script>
+      </script>  
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -38,92 +38,85 @@
       <!--Font Awesome-->
       <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
       <!--Tree Nav CSS-->
-      <link rel="stylesheet" href="../css/tree-nav.css"/>  
-      <link rel="stylesheet" href="../css/indexcss.css"/>    
+      <link rel="stylesheet" href="../css/tree-nav.css"/>
+      <link rel="stylesheet" href="../css/indexcss.css"/>
    </head>
    <body>     
       <header class="header">           
          <a href="../../index.html">
          <td id="projectlogo"><img alt="Logo" src="../manual/images/donkey.gif"  width="50" height="40"/></td>         
-         <div class="headtext" style="color:white">Examples</div>        
-         </td>   
-         </a>
+         <div class="headtext" style="color:white">FREE PLC</div>                 
+         </td></a>
+         <div class="headtext" style="color:white;margin-left:300px;font-size: 25px;padding-top:10px">Parts and component source</div> 
       <!--h1 class="headtext">Donkey PLC</h1>         
       <img src="donkey.gif" width="50" height="40"-->     
       </header>   
-      <nav class="tree-nav default">
+      <nav class="tree-nav default" style="width:400px">
          <ul class="main-items">                      
             <li data-type="folder">
-               <a href="#EX11" id="Basic systems">Overview</a>
+               <a href="#PS11">Main boards</a>
                <ul>
-                  <li><a href="#EX11">Application overview</a></li>
-                  <li><a href="#EX12">System hard configuration</a></li>  
-                  <li><a href="#EX13">PLC's Modules</a></li>
-                  <li><a href="#EX14">Function in main screen</a></li>
-                  <li><a href="#EX15">DIP switch setting</a></li> 
-                  <li><a href="#EX16">Function Pick icon screen</a></li>
+                  <li><a href="#PS11">USB expansion and input x4 </a> </li>
+                  <li><a href="#PS12">Four USB expansions and user define program chip</a> </li>                        
                </ul>
             </li>            
             <li data-type="folder">
-               <a href="#EX21">Syetem hardware setup</a>
-               <ul>    
-                  <li><a href="#EX21">Hardware configure</a> </li>                                            
-                  <li><a href="#EX22">I/O address map</a></li>  
-                  <li><a href="#EX23">Mainboard link to third part deivce</a></li> 
-                  <li><a href="#EX24">Edit program with simulation</a</li>                                 
+               <a href="#RY11">Featured relay output</a>
+               <ul>
+                  <li><a href="#RY11">Four relays</a> </li>
+                  <li><a href="#RY12">Four relays with MQTT broker</a> </li>  
+                  <li><a href="#RY13">Mqtt relays</a> </li>                 
+                  <li><a href="#RY14">Solid state Relays</a> </li>                   
                </ul>
             </li>
             <li data-type="folder">
-               <a href="#EX31">Input/Output Device</a>
+               <a href="#RY11">Input module</a>
                <ul>
-                  <li><a href="#EX31">Digital</a> </li>
-                  <li><a href="#EX32">Analog</a> </li>                  
-                  <li><a href="#EX33">Embeded C</a> </li>  
-                  <li><a href="#EX34">Electical</a> </li>                 
+                  <li><a href="#RY11">Four relays</a> </li>
+                  <li><a href="#RY12">Four relays with MQTT broker</a> </li>  
+                  <li><a href="#RY13">Mqtt relays</a> </li>                 
+                  <li><a href="#RY14">Solid state Relays</a> </li>                   
                </ul>
-            </li>        
+            </li>
             <li data-type="folder">
-               <a href="#EX41">Operation</a>
+               <a href="#RY11">Analog Input/output</a>
                <ul>
-                  <li><a href="#EX41">Digital operation</a> </li>
-                  <li><a href="#EX42">Analog operation</a> </li>                  
-                  <li><a href="#EX43">Mixed operation</a> </li>                 
+                  <li><a href="#RY11">Four relays</a> </li>
+                  <li><a href="#RY12">Four relays with MQTT broker</a> </li>  
+                  <li><a href="#RY13">Mqtt relays</a> </li>                 
+                  <li><a href="#RY14">Solid state Relays</a> </li>                   
                </ul>
-            </li>      
+            </li>
             <li data-type="folder">
-               <a href="#EX41">Communication</a>
+               <a href="#RY11">Graphic user interface</a>
                <ul>
-                  <li><a href="#EX51">PLC MQTT</a> </li>
-                  <li><a href="#EX52">PLC wire</a> </li>
-                  <li><a href="#EX53">Phone Internet</a> </li>
-                  <li><a href="#EX54">Phone LAN</a> </li>                 
+                  <li><a href="#RY11">Four relays</a> </li>
+                  <li><a href="#RY12">Four relays with MQTT broker</a> </li>  
+                  <li><a href="#RY13">Mqtt relays</a> </li>                 
+                  <li><a href="#RY14">Solid state Relays</a> </li>                   
                </ul>
-            </li>   
+            </li>
             <li data-type="folder">
-               <a href="#EX41">Other setup</a>
+               <a href="#nd11">3nd parties board</a>
                <ul>
-                  <li><a href="#EX61">Mqtt</a> </li>
-                  <li><a href="#EX62">Phone</a> </li>
-                  <li><a href="#EX62">File</a> </li>
-                  <li><a href="#EX63">Clock</a> </li>                 
+                  <li><a href="#nd11">Hardware requirement</a> </li>
+                  <li><a href="#nd12">Firmware upload</a> </li>
+                  <li><a href="#nd13">Config PLC</a> </li>                 
                </ul>
-            </li>                       
-         </ul>
+            </li>                     
       </nav>
-      <div class="content">  
-         <div w3-include-html="application.html" class="context"></div>       
-         <div w3-include-html="inputoutput.html" class="context"></div>
-         <div w3-include-html="ioputoutputdevice.html" class="context"></div>
+      <div class="content" style="margin-left:400px">   
+         <div w3-include-html="parts.html" class="context"></div>                       
          <script>
          includeHTML();
-         </script>                      
+         </script>                             
       </div>    
     <!--jQuery-->                 
     <script
   src="https://code.jquery.com/jquery-3.3.1.min.js"
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
-      <!--Tree Nav Js-->      
+      <!--Tree Nav Js-->
       <script src="../JS/jquery.treenav.js"></script>
       <script>
          $(document).ready(function(){
@@ -132,3 +125,18 @@
       </script>
    </body>
 </html>
+
+
+<!--
+<video width="400" controls>
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
+
+<p>
+Video courtesy of 
+<a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.
+</p>
+-->
+

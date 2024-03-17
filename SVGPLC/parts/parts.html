@@ -1,0 +1,165 @@
+ <!DOCTYPE html>
+<html lang="en">
+<body>  
+    <div>
+    <a class="anchor" id="PS11"></a><br><br>    
+      <h2>USB expansion and input x4</h2>
+      <p>The two modules are combined together to form a simple 4 input/output PLC. It supports all features except analog I/O.</p>                 
+      <hr>
+    </div>  
+    <div>
+    <a class="anchor" id="PS12"></a><br><br>       
+      <h2>Four USB expansions and user define program chip</h2>
+      <p>The main board consists of two MCUs, ESP32 S3 and RP2040, the second MCU is used for user programs. Users can choose from hundreds of carefully designed or user-predefined functions. The board also comes with 4 USB bus extenders and 1 USB power entry in a 4-inch square box.</p>                 
+      <hr><br>
+    </div>  
+    <div>   
+    <a class="anchor" id="RY11"></a><br><br>           
+      <h2>Four relays</h2>
+      <p>The system looks complex, however, everything is ready to use and the system can be set up very quickly.</p>      
+      <hr><br>
+    </div>   
+     <div>   
+    <a class="anchor" id="RY12"></a><br><br>           
+      <h2>Four relays with MQTT broker</h2>
+      <p>Since the relay board contains an MCU, it is still capable of performing more tasks. Therefore, four relay boards have MQTT broker functionality. The broker is mainly a server LAN, not far from the main board.</p>      
+      <hr><br>
+    </div>   
+     <div>   
+    <a class="anchor" id="RY13"></a><br><br>           
+      <h2>Mqtt relays</h2>
+      <p>The Mqtt relay board is the same as other relay boards, except that it is connected via WIFI mqtt.</p>      
+      <hr><br>
+    </div>   
+     <div>   
+    <a class="anchor" id="RY14"></a><br><br>           
+      <h2>Solid state Relays</h2>
+      <p>The board is like this, just using solid state relays instead of mechanical relays.</p>      
+      <hr><br>
+    </div>   
+    <div>   
+    <a class="anchor" id="EX13"></a><br><br>                  
+    <h2>PLC modules list</h2>
+    <table>
+        <thead>
+          <tr class="reverse">
+              <th>Item</th>
+              <th>Description</th>
+              <th>Details</th>
+              <th>Stock</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+              <td>Mainboard PLCMQ-001</td>
+              <td>Mainboard with Mqtt borker</td>
+              <td>Donkey lab.</td>
+              <td>0</td>
+          </tr>
+          <tr>
+              <td>Mainboard PLCIN-001</td>
+              <td>Mainboard with 6 isolated input</td>
+              <td>Donkey lab.</td>
+              <td>0</td>
+          </tr>
+          <tr>
+              <td>Plastic rail mount case</td>
+              <td></td>
+              <td>For dll donkey lab. products</td>
+              <td>Available in market</td>
+          </tr>                       
+          <tr>
+              <td>4 Relay output board</td>
+              <td>For wire linkup</td>
+              <td>little interface board required</td>
+              <td>Available in market</td>
+          </tr>
+          <tr>
+            <td>4 channel Analog input</td>
+            <td>RS232 linkup Analog input</td>
+            <td>Donkey lab.</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>2in 2 out channel Analog</td>
+            <td>RS232 linkup Analog in/out board, fully isolated</td>
+            <td>Donkey lab.</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>8 channel spliter board</td>
+            <td>RS232 8 channel, spliter</td>
+            <td>Donkey lab.</td>
+            <td>0</td>
+          </tr>
+          <tr>
+            <td>User prototype board</td>
+            <td>Power inlet and USB c linkup to mainboard</td>
+            <td>Donkey lab.</td>
+            <td>0</td>
+          </tr>          
+            <!-- Add more rows for additional features -->
+        </tbody>
+    </table>
+    </div>  
+    <a class="anchor" id="EX14"></a><br><br>  
+    <h2>Function in main screen</h2>
+    <p>After setup wifi SSID and PW, Open URL program will get the screen as bellow</p>
+    <img src="../images/mainscreen.png" style="position:relative;width:900px">  
+     <a class="anchor" id="EX15"></a><br><br>      
+     <h2>DIP switch function</h2>
+     <table>
+        <thead>
+            <tr class="reverse">
+                <th>Key Name</th>
+                <th>Description</th>             
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>WIFI Disable</td>
+                <td>For input SSID and PASSWORD</td>            
+            </tr>
+            <tr>
+                <td>Mqtt Disable</td>
+                <td>get wifi or mqtt connect status</td>             
+            </tr>
+            <tr>
+                <td>Display Enable</td>
+                <td>Return to the page for edit ladder program</td>            
+            </tr>
+            <tr>
+              <td>LAN phone Enable</td>
+              <td>clear the edit screen</td>        
+            </tr>
+            <tr>
+              <td>MQTT phone Enable</td>
+              <td>Get the program status</td>            
+          </tr>
+          <tr>
+              <td>Remote update Enable</td> 
+              <td>Download the ladder program PLC hardware</td>                       
+          </tr>
+          <tr>
+            <td>EDIT required password</td>
+            <td>Upload program to PLC hareware</td>         
+          </tr>        
+            <!-- Add more rows for additional features -->
+        </tbody>
+    </table>
+    <a class="anchor" id="EX16"></a><br><br>  
+    <h2>Function in Pick icon screen</h2>        
+    <table>       
+        <tbody>
+          <tr>
+            <td style="border:0px"><img src="../images/Pickupmen.png" style="position:relative;width:200px"></td>
+            <td style="border:0px"><p>(1) Use the mouse left click to select, and the icon cannot be dragged to the editing area. Move the mouse to the editing area and left-click.</P> 
+            <p>(2) Right-click the selected icon, and a help menu will pop up on the right. The help menu must be closed to return to the editing window.</P>
+            <p>(3) You can select Blank Icons to delete unwanted icons.</P>    
+            <br><br><br<br><br><br><br><br<br><br><br><br><br<br><br><br<br><br>      
+            </td>
+          </tr>                   
+        </tbody>
+    </table>    
+</body>
+</html>

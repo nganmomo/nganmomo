@@ -1,34 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
-   <script>
-      function includeHTML() {
-        var z, i, elmnt, file, xhttp;
-        /*loop through a collection of all HTML elements:*/
-        z = document.getElementsByTagName("*");
-        for (i = 0; i < z.length; i++) {
-          elmnt = z[i];
-          /*search for elements with a certain attribute:*/
-          file = elmnt.getAttribute("w3-include-html");
-          if (file) {
-            /*make an HTTP request using the attribute value as the file name:*/
-            xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-              if (this.readyState == 4) {
-                if (this.status == 200) {elmnt.innerHTML = this.responseText;}
-                if (this.status == 404) {elmnt.innerHTML = "Page not found.";}
-                /*remove the attribute, and call this function once more:*/
-                elmnt.removeAttribute("w3-include-html");
-                includeHTML();
-              }
-            }      
-            xhttp.open("GET", file, true);
-            xhttp.send();
-            /*exit the function:*/
-            return;
-          }
-        }
-      };
-      </script>
+<html lang="en">   
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -44,17 +15,17 @@
    <body>     
       <header class="header">           
          <a href="../../index.html">
-         <td id="projectlogo"><img alt="Logo" src="./images/donkey.gif"  width="50" height="40"/></td>         
+         <td id="projectlogo"><img alt="Logo" src="../manual/images/donkey.gif"  width="50" height="40"/></td>         
          <div class="headtext" style="color:white">FREE PLC</div>                 
          </td></a>
-         <div class="headtext" style="color:white;margin-left:300px;font-size: 25px;padding-top:10px">User manual</div> 
+         <div class="headtext" style="color:white;margin-left:300px;font-size: 25px;padding-top:10px">Lean by movies</div> 
       <!--h1 class="headtext">Donkey PLC</h1>         
       <img src="donkey.gif" width="50" height="40"-->     
       </header>   
       <nav class="tree-nav default">
          <ul class="main-items">                      
             <li data-type="folder">
-               <a href="#OV11">Begin FreePLC programming</a>
+               <a href="#BP11">Begin FreePLC programming</a>
                <ul>
                   <li><a href="#BP11">Basic theory of Ladder program</a> </li>
                   <li><a href="#BP12">Hardware requirement</a> </li>
@@ -104,17 +75,7 @@
             </li>
  
       </nav>
-      <div class="content">
-         <div w3-include-html="HowtoUSe_PLCeditor.html" class="context"></div>         
-         <div w3-include-html="Quick_start.html" class="context"></div>   
-         <!--div w3-include-html="operationsetup.html" class="context"></div>    
-         <div w3-include-html="examples.html" class="context"></div>
-         <div w3-include-html="LadderCode.html" class="context"></div>
-         <div w3-include-html="Api.html" class="context"></div>                        
-         <div w3-include-html="System_setup.html" class="context"></div-->        
-         <script>
-         includeHTML();
-         </script>                      
+      <div class="content">                         
       </div>    
     <!--jQuery-->                 
     <script
@@ -130,3 +91,18 @@
       </script>
    </body>
 </html>
+
+
+<!--
+<video width="400" controls>
+  <source src="mov_bbb.mp4" type="video/mp4">
+  <source src="mov_bbb.ogg" type="video/ogg">
+  Your browser does not support HTML video.
+</video>
+
+<p>
+Video courtesy of 
+<a href="https://www.bigbuckbunny.org/" target="_blank">Big Buck Bunny</a>.
+</p>
+-->
+

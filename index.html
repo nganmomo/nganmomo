@@ -15,11 +15,11 @@
     nav {
       display:inline;    
       text-align: center;        
-      padding: 15px;
-      margin-left: 25%;
+      padding: 0px;
+      margin-left: 20%;
       position: fixed;
-      width: 100%;
-      z-index: 1000;      
+      height:60px;
+      z-index: 1;    
     }
 
     ul {      
@@ -27,7 +27,7 @@
       margin: 0;
       padding: 0;
       overflow: hidden;
-      background-color: transparent;
+      background-color: #0366ff; /*transparent;*/            
     }
 
     li {
@@ -57,44 +57,51 @@
       padding: 0px;      
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      z-index: -1;      
     }
-    .content-container1 {
+    .content-containerA{
       /*background-color: transparent;*/
       background-color: #0366ff;
       color:rgb(27, 26, 26);
       max-width: 800px;
-      margin: 0px auto; /* Adjust the margin for vertical centering */
+      /*margin: 0px auto;  Adjust the margin for vertical centering */
+      margin-left:10%;
       padding: 0px;      
       border-radius: 8px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       font-size: 18px;
+      z-index: -1;      
     }
   </style>
 </head>
 <body>  
-   <img src="./SVGPLC/images/bluedonkey.png" style="position:relative; left:25%; width:100px">
+  <img src="./SVGPLC/images/bluedonkey.png" style="position:fixed; left:10%; width:100px;z-index: 1">      
   <nav>
     <ul>            
+      <li><a href="./SVGPLC/simpleapp/simappindex.html">Simple_App</a></li>
       <li><a href="./SVGPLC/document/Aboutindex.html">About_Project</a></li>
-      <li><a href="./SVGPLC/manual/mindex.html">User_manual</a></li>      
-      <li><a href="./SVGPLC/examples/exindex.html">Learn_By_Examples</a></li>
-      <!--li><a href="./SVGPLC/document/advanceFeature.html">Advance_Functions</a></li-->
+      <li><a href="./SVGPLC/manual/mindex.html">Manual</a></li>      
+      <li><a href="./SVGPLC/examples/exindex.html">Examples</a></li>
+      <li><a href="./SVGPLC/learnmovie/bymovieindex.html">Movies</a></li>    
       <li><a href="./SVGPLC/PLC/homeweb.html">Simulation</a></li>          
       <li><a href="./SVGPLC/document/download.html">Download</a></li>
+      <li><a href="./SVGPLC/parts/partsindex.html">Parts</a></li>
       <li><a href="./SVGPLC/PLC/contact.html">Contact</a></li>
     </ul>
   </nav>
 
-  <table style="margin-left:28%">       
+  <table style="margin-left:10%">       
         <tbody>
           <tr>
-            <td style="border:0px"><div class="content-container">
+            <td style="border:0px">
+            <div class="content-container"style="margin-top:20%">
             <h1>FREE PLC EDITOR</h1>
             <p>Create your PLC program just in few steps.</p>
             <p>(1) Download program and upload into Arduino chips</p>
             <p>(2) Get the sample control program and modify it to the functions you need</p>
             <p>(3) Upload it to Arduino board and done</p>
-            </div></td>
+            </div>
+            </td>
             <td style="border:0px">
             <a href="./SVGPLC/news/plcnews.html">
             <p><img src="./SVGPLC/images/news.png" style="position:relative;width:267px"></P>                 
@@ -110,12 +117,12 @@
     <p>(2) Get the sample control program and modify it to the functions you need</p>
     <p>(3) Upload it to Arduino board and done</p>
   </div-->
-  <video style="position:relative; left:55%; width:600px" autoplay loop muted>
+  <video style="position:relative; left:40%; width:600px" autoplay loop muted>
   <source src="./SVGPLC/movie/PLCshort.mp4"type="video/mp4">  
   Your browser does not support the video tag.
   </video>
   <!--img src="./SVGPLC/images/news.png" style="position:relative; left:55%; width:267px"-->
-  <div class="content-container1">
+  <div class="content-containerA">
     <h1>ADVANCE DESIGN MORE FEATURES</h1>
     <p>(1) Use Arduino chip that supports wifi and Bluetooth</p>
     <p>(2)Support remote update and network connection</p>
